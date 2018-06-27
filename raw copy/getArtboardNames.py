@@ -13,5 +13,5 @@ for page in obj["pages"]:
         artboardName = artboard["name"].encode("utf-8").decode("utf-8") 
 
         name = pageName + "/" + artboardName
-        if len(list(ignore)) == 0 or all(regex.match(name) == None for regex in ignore):
+        if len(ignore) == 0 or all(regex.match(name) == None for regex in ignore):
             print(artboardName)

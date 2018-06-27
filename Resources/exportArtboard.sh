@@ -70,11 +70,7 @@ do
   if [[ ${INCLUDE_OVERVIEW} == "true" ]]
   then
     artboardName="${artboard%.*}" # Exclude the file extension
-    # artboardPathUrlEncoded=$(python -c raw_input() <<< "$artboardPath")
-    # str.replace(old, new[, max])
-    # artboardPathUrlEncoded=$(python -c raw_input().replace(' ', '%20') <<< "$artboardPath")
-    replace="%20"
-    artboardPathUrlEncoded=${artboardPath// /%20}
+    artboardPathUrlEncoded=$(python -c "import urllib;print urllib.quote(raw_input())" <<< "$artboardPath")
     echo "" >> "${readmeFile}"
     echo "## ${artboardName}" >> "${readmeFile}"
     echo "" >> "${readmeFile}"

@@ -2,8 +2,8 @@
 import { sendError } from './analytics'
 
 export function setIconForAlert (context, alert) {
-  alert.setIcon(NSImage.alloc().initWithContentsOfFile(
-    context.plugin.urlForResourceNamed('icon.png').path()))
+  // alert.setIcon(NSImage.alloc().initWithContentsOfFile(
+  //   context.plugin.urlForResourceNamed('icon.png').path()))
 }
 
 export function executeSafely (context, func) {
