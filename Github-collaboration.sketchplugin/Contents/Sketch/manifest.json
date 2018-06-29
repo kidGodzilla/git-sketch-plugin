@@ -1,7 +1,7 @@
 {
   "name": "Github Collaboration",
   "author": "HBO",
-  "authorEmail" : "james.futhey@hbo.com",
+  "authorEmail": "james.futhey@hbo.com",
   "identifier": "me.hbo.git-plugin",
   "compatibleVersion": 3,
   "bundleVersion": 2,
@@ -9,8 +9,8 @@
     {
       "name": "synconload",
       "identifier": "synconload",
-      "script": "./commands/syncOnload.js",
-      "handlers" : {
+      "script": "syncOnload.js",
+      "handlers": {
         "actions": {
           "OpenDocument": "onRun"
         }
@@ -19,8 +19,8 @@
     {
       "name": "autoExportOnSave",
       "identifier": "autoExportOnSave",
-      "script": "./commands/autoExportOnSave.js",
-      "handlers" : {
+      "script": "autoExportOnSave.js",
+      "handlers": {
         "actions": {
           "DocumentSaved": "onRun"
         }
@@ -30,71 +30,71 @@
       "name": "Commit",
       "identifier": "commit",
       "shortcut": "cmd alt ctrl c",
-      "script": "./commands/Commit.js",
-      "description" : "Commit your changes.",
-      "icon" : "icons/commit.png"
+      "script": "Commit.js",
+      "description": "Commit your changes.",
+      "icon": "icons/commit.png"
     },
     {
       "name": "Share",
       "identifier": "share",
-      "script": "./commands/share.js",
-      "description" : "Share your changes.",
-      "icon" : "icons/commit.png"
+      "script": "share.js",
+      "description": "Share your changes.",
+      "icon": "icons/commit.png"
     },
     {
       "name": "Push",
       "identifier": "push",
       "shortcut": "cmd alt ctrl p",
-      "script": "./commands/Push.js",
-      "description" : "Push your commits to GitHub.",
-      "icon" : "icons/push.png"
+      "script": "Push.js",
+      "description": "Push your commits to GitHub.",
+      "icon": "icons/push.png"
     },
     {
       "name": "Branches",
       "identifier": "branches",
       "shortcut": "cmd alt ctrl b",
-      "script": "./commands/Branches.js",
-      "description" : "Manage git branches.",
-      "icon" : "icons/branches.png"
+      "script": "Branches.js",
+      "description": "Manage git branches.",
+      "icon": "icons/branches.png"
     },
     {
       "name": "Pull",
       "identifier": "pull",
-      "script": "./commands/Pull.js",
-      "description" : "Pull changes and branches from GitHub.",
-      "icon" : "icons/pull.png"
+      "script": "Pull.js",
+      "description": "Pull changes and branches from GitHub.",
+      "icon": "icons/pull.png"
     },
     {
       "name": "Sync",
       "identifier": "sync",
-      "script": "./commands/sync.js",
-      "description" : "Pull changes from GitHub.",
-      "icon" : "icons/pull.png"
+      "script": "sync.js",
+      "description": "Pull changes from GitHub.",
+      "icon": "icons/pull.png"
     },
     {
       "name": "Generate files for pretty diffs",
       "identifier": "export",
-      "script": "./commands/Export.js"
+      "script": "Export.js"
     },
     {
       "name": "Add file to git",
       "identifier": "add",
-      "script": "./commands/Add.js"
+      "script": "Add.js"
     },
     {
       "name": "Init git repo",
       "identifier": "init",
-      "script": "./commands/Init.js"
+      "script": "Init.js"
     },
     {
       "name": "Preferences",
       "identifier": "preferences",
-      "script": "./commands/Preferences.js"
+      "script": "Preferences.js"
     },
     {
       "name": "Open terminal",
       "identifier": "terminal",
-      "script": "./commands/OpenTerminal.js"
+      "script": "OpenTerminal.js"
     }
   ],
   "menu": {
@@ -117,5 +117,10 @@
         ]
       }
     ]
-  }
+  },
+  "version": "2.11.4",
+  "description": "Plugin to handle collaboration in Github",
+  "homepage": "https://github.com/kidGodzilla/git-sketch-plugin#readme",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml"
 }

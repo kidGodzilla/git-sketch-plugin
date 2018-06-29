@@ -14,7 +14,7 @@ const LOCAL_PREFS = {
 const GLOBAL_PREFS = {
   terminal: 'Terminal',
   diffByDefault: true,
-  sendAnalytics: true
+  sendAnalytics: false
 }
 
 export function getUserPreferences (context) {
