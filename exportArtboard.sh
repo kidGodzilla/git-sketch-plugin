@@ -23,6 +23,21 @@ function upsearch {
   done
 }
 
+# Explode sketch file to .FILENAME
+  # Copy .sketch to .zip
+  cp "$FILENAME" "$FILENAME.zip"
+
+  # Unzip the file and delete
+  unzip -o "$FILENAME.zip" -d ".$FILENAME/"
+  rm -Rf "$FILENAME.zip"
+
+  # Remove the preview file
+  rm -Rf ".$FILENAME/previews/"
+
+  # test
+  python -m json.tool ".$FILENAME/document.json" > ".$FILENAME/document.json.pretty"
+
+
 SKETCH_IGNORE=$(upsearch ".sketchignore")
 
 # get list of artboards regex to ignore
