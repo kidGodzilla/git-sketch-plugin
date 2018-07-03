@@ -34,8 +34,19 @@ function upsearch {
   # Remove the preview file
   # rm -Rf ".$FILENAME/previews/"
 
-  # test
-  python -m json.tool ".$FILENAME/document.json" > ".$FILENAME/document.json.pretty"
+  # Prettify json in current directory
+    for j in  ."$FILENAME"/*.json
+    do
+      cat "$j" | python -m json.tool > out.json
+      mv out.json "$j"
+    done
+
+  # Prettify json in subdirectories (just /pages right now)
+  for j in  ."$FILENAME"/**/*.json
+  do
+    cat "$j" | python -m json.tool > out.json
+    mv out.json "$j"
+  done
 
 
 SKETCH_IGNORE=$(upsearch ".sketchignore")
@@ -98,12 +109,16 @@ do
   fi
 done
 
+# Old git add command (limited scope)
+# git add "$EXPORT_FOLDER"
 
-git add "$EXPORT_FOLDER"
-
-if [[ ${INCLUDE_OVERVIEW} == "true" ]]
-then
-  git add "${readmeFile}"
-fi
+# if [[ ${INCLUDE_OVERVIEW} == "true" ]]
+# then
+#  git add "${readmeFile}"
+# fi
 
 rm -rf .oldArtboards
+
+# Add all of the things to git
+git add -A
+

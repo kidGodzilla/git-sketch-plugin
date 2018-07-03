@@ -1,9 +1,19 @@
 // Common library of things
 import { sendError } from './analytics'
+// import { Document } from 'sketch/dom'
+//import { dom } from 'sketch'
 
 export function setIconForAlert (context, alert) {
   // alert.setIcon(NSImage.alloc().initWithContentsOfFile(
   //   context.plugin.urlForResourceNamed('icon.png').path()))
+}
+
+export function reloadCurrentSketchDocument (context) {
+  // Reload a sketch document currently open
+  var path = context.document.fileURL().path()
+  path = path + ''
+  context.document.close()
+  //Document.open(path)
 }
 
 export function executeSafely (context, func) {

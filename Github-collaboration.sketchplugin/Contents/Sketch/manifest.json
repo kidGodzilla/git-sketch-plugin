@@ -65,10 +65,10 @@
       "icon": "icons/pull.png"
     },
     {
-      "name": "Sync",
+      "name": "Get Latest",
       "identifier": "sync",
       "script": "sync.js",
-      "description": "Pull changes from GitHub.",
+      "description": "Pull changes from GitHub. Could overwrite local changes if not committed.",
       "icon": "icons/pull.png"
     },
     {

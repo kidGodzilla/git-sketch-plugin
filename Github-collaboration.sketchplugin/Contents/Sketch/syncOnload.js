@@ -82,6 +82,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 exports.setIconForAlert = setIconForAlert;
+exports.reloadCurrentSketchDocument = reloadCurrentSketchDocument;
 exports.executeSafely = executeSafely;
 exports.exec = exec;
 exports.getCurrentDirectory = getCurrentDirectory;
@@ -98,9 +99,20 @@ exports.checkForGitRepository = checkForGitRepository;
 
 var _analytics = __webpack_require__(4);
 
+// import { Document } from 'sketch/dom'
+//import { dom } from 'sketch'
+
 function setIconForAlert(context, alert) {
   // alert.setIcon(NSImage.alloc().initWithContentsOfFile(
   //   context.plugin.urlForResourceNamed('icon.png').path()))
+}
+
+function reloadCurrentSketchDocument(context) {
+  // Reload a sketch document currently open
+  var path = context.document.fileURL().path();
+  path = path + '';
+  context.document.close();
+  //Document.open(path)
 }
 
 function executeSafely(context, func) {

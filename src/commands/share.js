@@ -1,21 +1,21 @@
 // Commits all working file to git (cmd alt ctrl c)
 import { sendEvent } from '../analytics'
-import { getCurrentFileName, getCurrentBranch, checkForFile, executeSafely, exec, createInputWithCheckbox, exportArtboards } from '../common'
+import { getCurrentFileName, getCurrentBranch, checkForFile, executeSafely, exec, createInputWithCheckbox, exportArtboards, reloadCurrentSketchDocument } from '../common'
 import { getUserPreferences } from '../preferences'
 
 export default function (context) {
   if (!checkForFile(context)) { return }
 
   // Add
-  executeSafely(context, function () {
-    sendEvent(context, 'Add', 'add current file')
-    var currentFileName = getCurrentFileName(context)
-    if (currentFileName) {
-      var command = `git add "${currentFileName}"`
-      exec(context, command)
-      context.document.showMessage('File added to git')
-    }
-  })
+  // executeSafely(context, function () {
+  //   sendEvent(context, 'Add', 'add current file')
+  //   var currentFileName = getCurrentFileName(context)
+  //   if (currentFileName) {
+  //     var command = `git add "${currentFileName}"`
+  //     exec(context, command)
+  //     context.document.showMessage('File added to git')
+  //   }
+  // })
 
   // Commit
   executeSafely(context, function () {
@@ -40,6 +40,8 @@ export default function (context) {
   executeSafely(context, function () {
     sendEvent(context, 'Push', 'Push to remote')
     exec(context, 'git -c push.default=current push -q')
-    context.document.showMessage('Changes pushed')
+    exec(context, './generate-sketch-files.command')
+    context.document.showMessage('Changes pushed. Re-opening sketch file.')
+    reloadCurrentSketchDocument(context)
   })
 }
