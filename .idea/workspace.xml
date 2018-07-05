@@ -2,28 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4a0eb3b-97ed-4eff-8259-e665a1fd811d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Add.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Branches.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Init.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Pull.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Push.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/sync.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/syncOnload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/exportArtboard.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/getArtboardNames.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Add.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Branches.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Branches.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Commit.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Commit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Export.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Export.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Init.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/OpenTerminal.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/OpenTerminal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Preferences.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Preferences.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Pull.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Pull.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Push.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/Push.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/autoExportOnSave.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/autoExportOnSave.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/manifest.json" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/share.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/share.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exportArtboard.sh" afterPath="$PROJECT_DIR$/exportArtboard.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/share.js" afterPath="$PROJECT_DIR$/src/commands/share.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/sync.js" afterPath="$PROJECT_DIR$/src/commands/sync.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/sync.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/sync.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/syncOnload.js" afterPath="$PROJECT_DIR$/Github-collaboration.sketchplugin/Contents/Sketch/syncOnload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common.js" afterPath="$PROJECT_DIR$/src/common.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,11 +31,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="210">
+              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -185,6 +187,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -221,32 +225,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="git-sketch-plugin-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="git-sketch-plugin-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Github-collaboration.sketchplugin" />
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,12 +349,13 @@
       <workItem from="1530143755986" duration="391000" />
       <workItem from="1530216590870" duration="3575000" />
       <workItem from="1530287222979" duration="2792000" />
-      <workItem from="1530632731710" duration="7647000" />
+      <workItem from="1530632731710" duration="7734000" />
+      <workItem from="1530806510759" duration="1684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14405000" />
+    <option name="totallyTimeSpent" value="16176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -379,19 +364,19 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16145833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -544,19 +529,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/sketch/components/component-classes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/sketch/components/component-classes/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/sketch-module-settimeout-polyfill/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,19 +547,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_document.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3998">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_document.json" />
     <entry file="file://$PROJECT_DIR$/Github-collaboration.sketchplugin/exportArtboard.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -600,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -608,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,35 +611,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/sketch/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/sketch/Readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/sketch/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="139" column="27" lean-forward="false" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/sketch/package.json" />
+    <entry file="file://$PROJECT_DIR$/node_modules/sketch/Readme.md" />
+    <entry file="file://$PROJECT_DIR$/node_modules/sketch/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/sketch-module-web-view/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,15 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,8 +737,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="210">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
           <folding />
         </state>
       </provider>

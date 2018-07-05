@@ -99,9 +99,6 @@ exports.checkForGitRepository = checkForGitRepository;
 
 var _analytics = __webpack_require__(4);
 
-// import { Document } from 'sketch/dom'
-//import { dom } from 'sketch'
-
 function setIconForAlert(context, alert) {
   // alert.setIcon(NSImage.alloc().initWithContentsOfFile(
   //   context.plugin.urlForResourceNamed('icon.png').path()))
@@ -112,7 +109,8 @@ function reloadCurrentSketchDocument(context) {
   var path = context.document.fileURL().path();
   path = path + '';
   context.document.close();
-  //Document.open(path)
+  // Document.open(path)
+  // context.document.askToOpenNewerDocument()
 }
 
 function executeSafely(context, func) {
