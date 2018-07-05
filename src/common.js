@@ -1,7 +1,7 @@
 // Common library of things
 import { sendError } from './analytics'
-// import { Document } from 'sketch/dom'
-//import { dom } from 'sketch'
+
+const Document = require('sketch/dom').Document;
 
 export function setIconForAlert (context, alert) {
   // alert.setIcon(NSImage.alloc().initWithContentsOfFile(
@@ -13,7 +13,7 @@ export function reloadCurrentSketchDocument (context) {
   var path = context.document.fileURL().path()
   path = path + ''
   context.document.close()
-  //Document.open(path)
+  Document.open(path)
 }
 
 export function executeSafely (context, func) {

@@ -1,49 +1,93 @@
-## This plugin was a first attempt to bring version control and collaboration to designers. Since then, Sketch evolved a lot and my new project takes advantages of them to unlock _true_ version control. Check it out: [http://kactus.io](http://kactus.io)
+# github-sketch-plugin
 
----
+_This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
 
+## Usage
 
-<img align="right" src="logo.png">
+Install the dependencies
 
-git-sketch-plugin
-=========
-[![GitHub release](https://img.shields.io/github/release/mathieudutour/git-sketch-plugin.svg?maxAge=2592000)](https://github.com/mathieudutour/git-sketch-plugin/releases) 
-[![GitHub release](https://img.shields.io/badge/Works%20with-Sketch%20Runner-blue.svg?colorB=308ADF)](http://bit.ly/SketchRunnerWebsite)
+```bash
+npm install
+```
 
- A Git client built right into [Sketch](http://www.bohemiancoding.com/sketch). Generate [pretty diffs](https://github.com/mathieudutour/git-sketch-plugin/pull/1/files) so that everybody knows what are the changes!
+Once the installation is done, you can run some commands inside the project folder:
 
-From ...
-![Ugly](example/ScreenShotBad.png)
+```bash
+npm run build
+```
 
+To watch for changes:
 
-... To
-![Pretty](example/ScreenShotNice.png)
+```bash
+npm run watch
+```
 
-![screen cast](example/ScreenCast.gif)
+Additionally, if you wish to run the plugin every time it is built:
 
-## Requirements
-* [Sketch](http://sketchapp.com/) >= 3.4 (**not** with the sandboxed version ie from the App Store).
-* [Git](https://git-scm.com/) (coming with OS X so you shouldn't have to do anything)
-* [Xcode Command Line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)
+```bash
+npm run start
+```
 
-## Installation
+## Custom Configuration
 
-### From a release (simplest)
+### Babel
 
-* [Download](https://github.com/mathieudutour/git-sketch-plugin/releases/latest) the latest release of the plugin
-* Un-zip
-* Double-click on Git.sketchplugin
+To customize Babel, you have two options:
 
-### From the sources
+* You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
 
-* Clone the repo
-* Install the dependencies (`npm install`)
-* Build (`npm run build`)
-* Double-click on Git.sketchplugin
+* If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
 
-## Documentation
-For a Getting started guide, FAQ, etc. check out our [docs](https://github.com/mathieudutour/git-sketch-plugin/tree/master/docs)!
+### Webpack
 
-## Want to contribute?
+To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
 
-Anyone can help make this project better - check out our [Contributing guide](/CONTRIBUTING.md)!
+```js
+/**
+ * Function that mutates original webpack config.
+ * Supports asynchronous changes when promise is returned.
+ *
+ * @param {object} config - original webpack config.
+ * @param {boolean} isPluginCommand - whether the config is for a plugin command or a resource
+ **/
+module.exports = function(config, isPluginCommand) {
+  /** you can change config here **/
+}
+```
+
+## Debugging
+
+To view the output of your `console.log`, you have a few different options:
+
+* Use the [`sketch-dev-tools`](https://github.com/skpm/sketch-dev-tools)
+* Open `Console.app` and look for the sketch logs
+* Look at the `~/Library/Logs/com.bohemiancoding.sketch3/Plugin Output.log` file
+
+Skpm provides a convenient way to do the latter:
+
+```bash
+skpm log
+```
+
+The `-f` option causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
+
+## Publishing your plugin
+
+```bash
+skpm publish <bump>
+```
+
+(where `bump` can be `patch`, `minor` or `major`)
+
+`skpm publish` will create a new release on your GitHub repository and create an appcast file in order for Sketch users to be notified of the update.
+
+You will need to specify a `repository` in the `package.json`:
+
+```diff
+...
++ "repository" : {
++   "type": "git",
++   "url": "git+https://github.com/ORG/NAME.git"
++  }
+...
+```

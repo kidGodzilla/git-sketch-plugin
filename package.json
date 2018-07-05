@@ -1,25 +1,27 @@
 {
-  "name": "git-sketch-plugin",
-  "version": "2.11.4",
-  "description": "Plugin to handle collaboration in Github",
-  "main": "Github-collaboration.sketchplugin",
-  "manifest": "src/manifest.json",
+  "name": "github-sketch-plugin",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
   "resources": [
     "Resources/branches.js",
     "Resources/preferences.js"
   ],
-  "directories": {
-    "doc": "docs",
-    "example": "example"
+  "skpm": {
+    "name": "github-sketch-plugin",
+    "manifest": "src/manifest.json",
+    "main": "github-sketch-plugin.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
   },
   "scripts": {
-    "test": "eslint -c ./.eslintrc src/ && eslint -c ./.eslintrc Resources/",
-    "postinstall": "npm run build && skpm link ./",
-    "build": "skpm build"
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
   },
-  "author": "",
-  "license": "MIT",
-  "homepage": "https://github.com/kidGodzilla/git-sketch-plugin#readme",
   "devDependencies": {
     "babel-plugin-add-module-exports": "0.2.1",
     "babel-plugin-transform-react-jsx": "^6.8.0",
@@ -32,15 +34,19 @@
     "eslint-plugin-node": "4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "skpm": "^0.9.7"
+    "@skpm/builder": "^0.5.2"
   },
   "dependencies": {
     "eslint-config-sketch": "^0.2.2",
     "eslint-config-standard-preact": "^1.0.1",
     "eslint-plugin-react": "^6.10.3",
     "preact": "^7.1.0",
+    "sketch-module-console-polyfill": "^0.1.0",
+    "sketch-module-fetch-polyfill": "^0.1.4",
     "sketch-module-fs": "^0.1.2",
     "sketch-module-google-analytics": "^0.1.3",
+    "sketch-module-setinterval-polyfill": "^0.1.0",
+    "sketch-module-settimeout-polyfill": "^0.2.0",
     "sketch-module-update": "^0.1.2",
     "sketch-module-user-preferences": "^1.0.1",
     "sketch-module-web-view": "^0.1.4"
