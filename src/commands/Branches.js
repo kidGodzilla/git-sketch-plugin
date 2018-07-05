@@ -6,7 +6,6 @@ import WebUI from 'sketch-module-web-view'
 export default function (context) {
   if (!checkForFile(context)) { return }
   executeSafely(context, function () {
-    sendEvent(context, 'Branch', 'Switch branch', 'Start switching branch')
     var listBranchesCommand = 'git for-each-ref --format=\'%(refname:short)\' refs/heads/'
     var listBranches = exec(context, listBranchesCommand)
     if (listBranches != null && listBranches != '') {
@@ -21,7 +20,6 @@ export default function (context) {
         handlers: {
           checkoutBranch (name) {
             executeSafely(context, function () {
-              sendEvent(context, 'Branch', 'Switch branch', 'Did switch branch')
               var command = 'git checkout -q ' + name
               exec(context, command)
               var app = NSApp.delegate()
@@ -32,7 +30,6 @@ export default function (context) {
           },
           deleteBranch (name) {
             executeSafely(context, function () {
-              sendEvent(context, 'Branch', 'Delete branch', 'Did delete branch')
               var command = 'git branch -d ' + name
               exec(context, command)
               context.document.showMessage(`Deleted branch '${name}'`)
@@ -40,7 +37,6 @@ export default function (context) {
           },
           createBranch () {
             executeSafely(context, function () {
-              sendEvent(context, 'Branch', 'Create branch', 'Start creating branch')
               var branchName = createInput(context, 'New branch name', 'Create branch')
 
               if (branchName.responseCode == 1000 && branchName.message != null) {
@@ -49,8 +45,6 @@ export default function (context) {
                 context.document.showMessage("Switched to a new branch '" + branchName.message + "'")
                 sendEvent(context, 'Branch', 'Create branch', 'Did create branch')
                 webUI.panel.close()
-              } else {
-                sendEvent(context, 'Branch', 'Create branch', 'Cancel creating branch')
               }
             })
           }

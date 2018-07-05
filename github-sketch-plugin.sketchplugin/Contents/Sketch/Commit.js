@@ -337,7 +337,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************!*\
   !*** ./src/common.js ***!
   \***********************/
-/*! exports provided: setIconForAlert, reloadCurrentSketchDocument, executeSafely, exec, getCurrentDirectory, getGitDirectory, getCurrentFileName, createFailAlert, createInput, createInputWithCheckbox, createSelect, getCurrentBranch, exportArtboards, checkForFile, checkForGitRepository */
+/*! exports provided: setIconForAlert, reloadCurrentSketchDocument, executeSafely, exec, getCurrentDirectory, getGitDirectory, getCurrentFileName, createFailAlert, createInput, createInputWithCheckbox, createSelect, getCurrentBranch, exportArtboards, copyCommandlet, checkForFile, checkForCommandlet, checkForGitRepository */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -355,7 +355,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSelect", function() { return createSelect; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrentBranch", function() { return getCurrentBranch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "exportArtboards", function() { return exportArtboards; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "copyCommandlet", function() { return copyCommandlet; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkForFile", function() { return checkForFile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkForCommandlet", function() { return checkForCommandlet; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkForGitRepository", function() { return checkForGitRepository; });
 /* harmony import */ var _analytics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./analytics */ "./src/analytics.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -374,6 +376,7 @@ function reloadCurrentSketchDocument(context) {
   path = path + '';
   context.document.close();
   Document.open(path);
+  context.document.showMessage('Sketch file was reloaded with changes.');
 }
 function executeSafely(context, func) {
   try {
@@ -542,9 +545,26 @@ function exportArtboards(context, prefs) {
   var command = "".concat(pluginPath, "/exportArtboard.sh \"").concat(path, "\" \"").concat(exportFolder, "\" \"").concat(fileFolder, "\" \"").concat(bundlePath, "\" \"").concat(currentFileName, "\" \"").concat(exportFormat || 'png', "\" \"").concat(exportScale, "\" \"").concat(includeOverviewFile, "\"");
   return exec(context, command);
 }
+function copyCommandlet(context) {
+  var pluginPath = context.scriptPath.replace(/\/Contents\/Sketch\/(\w*)\.js$/, '').replace(/ /g, '\\ ');
+  var path = getCurrentDirectory(context);
+  var command = "cp ".concat(pluginPath, "/generate-sketch-files.command ").concat(path, "/ && chmod +x ").concat(path, "/generate-sketch-files.command");
+  return exec(context, command);
+}
 function checkForFile(context) {
   try {
     getCurrentFileName(context);
+    getCurrentDirectory(context);
+    return true;
+  } catch (e) {
+    Object(_analytics__WEBPACK_IMPORTED_MODULE_0__["sendError"])(context, 'Missing file');
+    createFailAlert(context, 'Missing file', 'You need to open a sketch file before doing that');
+    return false;
+  }
+}
+function checkForCommandlet(context) {
+  try {
+    // generate-sketch-files.command
     getCurrentDirectory(context);
     return true;
   } catch (e) {
@@ -616,16 +636,29 @@ var GLOBAL_PREFS = {
   sendAnalytics: false
 };
 function getUserPreferences(context) {
-  var localPrefs = {};
-
-  try {
-    var path = Object(_common__WEBPACK_IMPORTED_MODULE_2__["getGitDirectory"])(context);
-    localPrefs = JSON.parse(sketch_module_fs__WEBPACK_IMPORTED_MODULE_1___default.a.readFile(path + '/' + PREFS_FILE));
-  } catch (e) {
-    console.log(e);
-  }
-
-  return Object.assign({}, LOCAL_PREFS, sketch_module_user_preferences__WEBPACK_IMPORTED_MODULE_0___default.a.getUserPreferences(keyPref, GLOBAL_PREFS), localPrefs);
+  // let localPrefs = {}
+  // try {
+  //   var path = getGitDirectory(context)
+  //   localPrefs = JSON.parse(fs.readFile(path + '/' + PREFS_FILE))
+  // } catch (e) {
+  //   console.log(e)
+  // }
+  // return Object.assign(
+  //   {},
+  //   LOCAL_PREFS,
+  //   prefsManager.getUserPreferences(keyPref, GLOBAL_PREFS),
+  //   localPrefs
+  // )
+  return {
+    exportFolder: '.exportedArtboards',
+    exportFormat: 'png',
+    exportScale: '1.0',
+    includeOverviewFile: true,
+    autoExportOnSave: false,
+    terminal: 'Terminal',
+    diffByDefault: true,
+    sendAnalytics: false
+  };
 }
 function setUserPreferences(context, prefs) {
   var localPrefs = {};

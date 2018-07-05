@@ -7,19 +7,15 @@ export default function (context) {
   executeSafely(context, function () {
     var currentFileName = getCurrentFileName(context)
     if (currentFileName) {
-      sendEvent(context, 'Init', 'Start init')
-      var command = `git init && git add "${currentFileName}"`
+      var command = `git init`
       var message = exec(context, command)
       context.document.showMessage(message)
       var remoteURL = createInput(context, 'URL of the remote repo (you can create one here: https://github.com/new)', 'Add remote', 'Not now')
 
       if (remoteURL.responseCode == 1000 && remoteURL.message != null) {
-        sendEvent(context, 'Init', 'Add remote')
         command = `git remote add origin ${remoteURL.message}; exit`
         message = exec(context, command)
         context.document.showMessage(message.split('\n').join(' '))
-      } else {
-        sendEvent(context, 'Init', 'Cancel add remote')
       }
     } else {
       createFailAlert(context, 'Failed...', 'Cannot get the current file name')

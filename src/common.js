@@ -10,10 +10,11 @@ export function setIconForAlert (context, alert) {
 
 export function reloadCurrentSketchDocument (context) {
   // Reload a sketch document currently open
-  var path = context.document.fileURL().path()
-  path = path + ''
-  context.document.close()
-  Document.open(path)
+  var path = context.document.fileURL().path();
+  path = path + '';
+  context.document.close();
+  Document.open(path);
+  context.document.showMessage('Sketch file was reloaded with changes.')
 }
 
 export function executeSafely (context, func) {
@@ -196,17 +197,25 @@ export function exportArtboards (context, prefs) {
   return exec(context, command)
 }
 
-export function checkForFile (context) {
-  try {
-    getCurrentFileName(context)
-    getCurrentDirectory(context)
-    return true
-  } catch (e) {
-    sendError(context, 'Missing file')
-    createFailAlert(context, 'Missing file', 'You need to open a sketch file before doing that')
-    return false
-  }
+export function copyCommandlet (context) {
+    const pluginPath = context.scriptPath.replace(/\/Contents\/Sketch\/(\w*)\.js$/, '').replace(/ /g, '\\ ');
+    const path = getCurrentDirectory(context);
+    const command = `cp ${pluginPath}/generate-sketch-files.command ${path}/ && chmod +x ${path}/generate-sketch-files.command`;
+    return exec(context, command)
 }
+
+export function checkForFile (context) {
+    try {
+        getCurrentFileName(context)
+        getCurrentDirectory(context)
+        return true
+    } catch (e) {
+        sendError(context, 'Missing file')
+        createFailAlert(context, 'Missing file', 'You need to open a sketch file before doing that')
+        return false
+    }
+}
+
 export function checkForGitRepository (context) {
   try {
     getGitDirectory(context)

@@ -18,19 +18,30 @@ const GLOBAL_PREFS = {
 }
 
 export function getUserPreferences (context) {
-  let localPrefs = {}
-  try {
-    var path = getGitDirectory(context)
-    localPrefs = JSON.parse(fs.readFile(path + '/' + PREFS_FILE))
-  } catch (e) {
-    console.log(e)
-  }
-  return Object.assign(
-    {},
-    LOCAL_PREFS,
-    prefsManager.getUserPreferences(keyPref, GLOBAL_PREFS),
-    localPrefs
-  )
+  // let localPrefs = {}
+  // try {
+  //   var path = getGitDirectory(context)
+  //   localPrefs = JSON.parse(fs.readFile(path + '/' + PREFS_FILE))
+  // } catch (e) {
+  //   console.log(e)
+  // }
+  // return Object.assign(
+  //   {},
+  //   LOCAL_PREFS,
+  //   prefsManager.getUserPreferences(keyPref, GLOBAL_PREFS),
+  //   localPrefs
+  // )
+
+    return {
+        exportFolder: '.exportedArtboards',
+        exportFormat: 'png',
+        exportScale: '1.0',
+        includeOverviewFile: true,
+        autoExportOnSave: false,
+        terminal: 'Terminal',
+        diffByDefault: true,
+        sendAnalytics: false
+    }
 }
 
 export function setUserPreferences (context, prefs) {

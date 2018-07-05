@@ -23,6 +23,14 @@ function upsearch {
   done
 }
 
+# Add to .gitignore if not already there
+if grep -Fxq "$FILENAME" ".gitignore"
+then
+	echo 1
+else
+    echo "$FILENAME" >> .gitignore
+fi
+
 # Explode sketch file to .FILENAME
   # Copy .sketch to .zip
   cp "$FILENAME" "$FILENAME.zip"
@@ -37,14 +45,16 @@ function upsearch {
   # Prettify json in current directory
     for j in  ."$FILENAME"/*.json
     do
-      cat "$j" | python -m json.tool > out.json
+      #cat "$j" | python -m json.tool > out.json
+      jq . "$j" > out.json
       mv out.json "$j"
     done
 
   # Prettify json in subdirectories (just /pages right now)
   for j in  ."$FILENAME"/**/*.json
   do
-    cat "$j" | python -m json.tool > out.json
+    #cat "$j" | python -m json.tool > out.json
+    jq . "$j" > out.json
     mv out.json "$j"
   done
 
